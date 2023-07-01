@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>INFO</title>
+       <style>
+       span{
+           color:red;}</style>
+       <script>
+      function populateDay(){
+            var selectday=document.getElementById('dd');
+            for(var j=1;j<=31;j++){
+            var option=document.createElement('option');
+            option.value=j;
+            option.text=j;
+            selectday.appendChild(option);
+            }
+        }
+        window.onload=function(){
+            populateDay();
+        }
+       </script>
+    </head>
+    <body>
+        <form>
+            <table border="2px">
+                <tr>
+                    <td>
+                <input type="text" name="nm" id="nm" >
+          </td>
+          <td></td>
+          <span>*</span>
+            </tr>
+<td>BirthDate</td>
+<td>
+    <select name="month" id="mm">
+        <option value="test">---select---</option>
+        <option value="jan">JAN</option>
+        <option value="FEB">FEB</option>
+        <option value="MARCH">MARCH</option>
+    </select>
+    <select name="day" id="dd">
+     <option value="text">---select---</option>
+      
+    </select>
+</td>
+</select></td>
+            <tr>
+            
+            </tr>
+            </table>
+        </form>
+    </body>
+</html>

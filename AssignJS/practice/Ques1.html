@@ -1,0 +1,79 @@
+<html>
+<head>
+    <style>
+        body{
+            background-color: black;
+            color:aquamarine;
+        }
+        span{
+            color:red;
+        }
+     fieldset{
+         width: 40%;
+         margin-left: 350px;
+         margin-top:50px;
+     }
+    </style>
+<script>
+   
+
+  validate=(num,err)=>{
+      var a = document.getElementById(num).value;
+      if(a==="" || isNaN(a) || a.trim().length===0){
+          document.getElementById(err).innerHTML= "enter a valid number";
+          return false;
+      }
+      else{
+          return true;
+      }
+
+  }
+  validateData=()=>{
+      var flag1 = validate("num1","err1")
+      var flag2=validate("num2","err2")
+      var flag3 = validate("num3","err3")
+
+      if(flag1 && flag2 && flag3){
+          greatest();
+      }
+  }
+  greatest=()=>{
+      var a = parseInt(document.getElementById("num1").value);
+      var b = parseInt(document.getElementById("num2").value);
+      var c = parseInt(document.getElementById("num3").value);
+      var g=0;
+      if(a >b && a> c ){
+        g = a;
+      }
+      if(b > c && b > a){
+          g = b;
+      }
+      else{
+          g = c;
+      }
+      document.getElementById("ans").innerHTML="Greatest num : "+g;
+      document.write(g );
+      console.log(g);
+  }
+
+
+   
+    
+    </script>
+</head>
+<body>
+    <fieldset>
+    <form>
+  Number1 :  <input type="text" name="num1" id="num1"><span class="req">*</span>
+    <span id="err1"></span><br>
+    Number2 :  <input type="text" name="num2" id="num2"><span class="req"><span class="req">*</span>
+    <span id="err2"></span><br>
+    Number3 :  <input type="text" name="num3" id="num3"><span class="req"><span class="req">*</span>
+    <span id="err3"></span><br>
+    <label for id="btn">Operation</label><input type="button" name="btn" value="Submit Numbers" id="btn"  onclick="validateData()">
+    <div id="ans"></div>
+</form>
+</fieldset>
+</body>
+
+</html>
